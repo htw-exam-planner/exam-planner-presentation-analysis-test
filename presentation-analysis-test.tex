@@ -100,21 +100,71 @@
 
   \subsection{Angewandtes Wissen}
   \begin{frame}{\subsecname}
+    Wissen aus Software-Engineering I und II, insbesondere
+    \begin{itemize}
+      \item Was ist der Zusammenhang zwischen Analyse und Test?
+      \item Wie werden Test dokumntiert?
+      \item Welche Arten von Tests gibt es?
+      \item Praktikum JUnit
+    \end{itemize}
   \end{frame}
 
   \subsection{Herangehensweise}
   \begin{frame}{\subsecname}
-    body
+    \begin{block}{Testgegenstand: Code und Dokumente}
+      \begin{itemize}
+        \item Alle Änderungen von Code und Dokumenten nur über Pull Request
+        \item Jeder Pull Request von 2 Teammitgliedern geprüft
+        \item Richtlinien: Qualitätsrichtlinien von D. Keiling
+      \end{itemize}
+    \end{block}
+  \end{frame}
+
+  \subsection{Herangehensweise}
+  \begin{frame}{\subsecname}
+    \begin{block}{Testgegenstand: Komponenten}
+      \begin{itemize}
+        \item Klassen des Models mit Unit Tests getestet
+        \item Tests anhand Anforderungen im Pflichtenheft
+      \end{itemize}
+    \end{block}
+  \end{frame}
+
+  \subsection{Herangehensweise}
+  \begin{frame}{\subsecname}
+    \begin{block}{Testgegenstand: System}
+      \begin{itemize}
+        \item Systemtests für alle AWF definiert
+        \item Alle wesentlichen Varianten
+        \item Durchführung nach Fertigstellung jeder Ansicht
+      \end{itemize}
+    \end{block}
   \end{frame}
 
   \subsection{Erfahrungen}
   \begin{frame}{\subsecname}
-    body
+    \begin{itemize}
+      \item Viel mehr als nur Systemtests
+      \item Bei hoher Komplexität Unit Tests unverzichtbar
+    \end{itemize}
   \end{frame}
 
   \subsection{Bewertung}
   \begin{frame}{\subsecname}
-    body
+      \begin{block}{Was hat sich bewährt?}
+        \begin{itemize}
+          \item Genauigkeit im Pflichtenheft $\to$ Vollständigkeit der Testfälle
+          \item Automatisierte Tests
+          \item Reviews auf GitHub
+        \end{itemize}
+      \end{block}
+
+      \begin{block}{Was würde ich anders machen}
+        \begin{itemize}
+          \item Mehr automatisierte Tests
+          \item Testgetriebene Entwicklung
+        \end{itemize}
+      \end{block}
   \end{frame}
 
 
