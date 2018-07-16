@@ -14,8 +14,7 @@
   \subsection{Aufgabe}
   \begin{frame}{\subsecname}
     \begin{itemize}
-      \item Anforderungen ermitteln
-      \item Ermittelte Anforderungen spezifizieren
+      \item Anforderungen ermitteln und spezifizieren
       \item Geeignet beschreiben
       \item Verifizieren
     \end{itemize}
@@ -79,7 +78,7 @@
     \begin{block}{Was würde ich anders machen}
       \begin{itemize}
         \item Mehr Treffen mit dem Kunden
-        \item Nicht unbedingt UML und Satzschablonen
+        \item Nicht unbedingt UML \textit{und} Satzschablonen
         \item Agiles Vorgehensmodell
       \end{itemize}
     \end{block}
@@ -103,7 +102,7 @@
     Wissen aus Software-Engineering I und II, insbesondere
     \begin{itemize}
       \item Was ist der Zusammenhang zwischen Analyse und Test?
-      \item Wie werden Test dokumntiert?
+      \item Wie werden Tests dokumntiert?
       \item Welche Arten von Tests gibt es?
       \item Praktikum JUnit
     \end{itemize}
@@ -114,29 +113,39 @@
     \begin{block}{Testgegenstand: Code und Dokumente}
       \begin{itemize}
         \item Alle Änderungen von Code und Dokumenten nur über Pull Request
-        \item Jeder Pull Request von 2 Teammitgliedern geprüft
-        \item Richtlinien: Qualitätsrichtlinien von D. Keiling
+        \item Review: Jeder Pull Request von 2 Teammitgliedern geprüft
+        \item Richtlinien: Inhalt sowei Qualitätsrichtlinien von D. Keiling
       \end{itemize}
     \end{block}
   \end{frame}
 
-  \subsection{Herangehensweise}
   \begin{frame}{\subsecname}
     \begin{block}{Testgegenstand: Komponenten}
       \begin{itemize}
-        \item Klassen des Models mit Unit Tests getestet
-        \item Tests anhand Anforderungen im Pflichtenheft
+        \item Plan: Unit Tests für alle Klassen, insbesondere Model
+        \item Problem:
+          \begin{itemize}
+            \item DBRepository als Singleton schwer injizierbar
+            \item statische Methoden \texttt{all()} bei Appointment und Group
+          \end{itemize}
+        \item Lösungsmöglichkeit: Umbau des Model-Pakets
+          \begin{itemize}
+            \item Appointment, Group usw. als Data Transfer Objects
+            \item Funktionalität über Services
+            \item Abhängigkeiten über Dependency Injection einfügen
+          \end{itemize}
+        \item Aus zeitlichen Gründen nicht mehr machbar, daher keine Unit Tests
       \end{itemize}
     \end{block}
   \end{frame}
 
-  \subsection{Herangehensweise}
   \begin{frame}{\subsecname}
     \begin{block}{Testgegenstand: System}
       \begin{itemize}
         \item Systemtests für alle AWF definiert
-        \item Alle wesentlichen Varianten
+        \item Alle wesentlichen Fehleingaben laut Pflichtenheft geprüft
         \item Durchführung nach Fertigstellung jeder Ansicht
+        \item Einsatztest am 16.7. im Labor Z136b
       \end{itemize}
     \end{block}
   \end{frame}
@@ -146,6 +155,8 @@
     \begin{itemize}
       \item Viel mehr als nur Systemtests
       \item Bei hoher Komplexität Unit Tests unverzichtbar
+      \item Entwurf hat Auswirkung auf Testbarkeit
+      \item Hoher Zeitaufwand
     \end{itemize}
   \end{frame}
 
@@ -154,15 +165,14 @@
       \begin{block}{Was hat sich bewährt?}
         \begin{itemize}
           \item Genauigkeit im Pflichtenheft $\to$ Vollständigkeit der Testfälle
-          \item Automatisierte Tests
           \item Reviews auf GitHub
         \end{itemize}
       \end{block}
 
       \begin{block}{Was würde ich anders machen}
         \begin{itemize}
-          \item Mehr automatisierte Tests
-          \item Testgetriebene Entwicklung
+          \item Entwurf testfreundlich gestalten
+          \item Zeitrahmen für Implementation einhalten, um Zeit für Tests zu haben
         \end{itemize}
       \end{block}
   \end{frame}
